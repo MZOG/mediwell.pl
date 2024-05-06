@@ -21,7 +21,7 @@ export default function RootLayout({
       <html>
         <body>
           <main className="h-screen w-full flex items-center justify-center">
-            <p>elko</p>
+            <p className="text-sm">strona w budowie</p>
           </main>
         </body>
       </html>
