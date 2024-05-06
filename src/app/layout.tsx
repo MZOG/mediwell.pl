@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin-ext"] });
+
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +16,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+  if (process.env.NEXT_PUBLIC_IS_DEVELOPMENT) {
+    return (
+      <html>
+        <body>
+          <main className="h-screen w-full flex items-center justify-center">
+            <p>elko</p>
+          </main>
+        </body>
+      </html>
+    );
+  } else {
+    return (
+      <html lang="pl">
+        <body className={inter.className}>
+          <Header />
+          <main>{children}</main>
+          {/* <Footer /> */}
+        </body>
+      </html>
+    );
+  }
 }
