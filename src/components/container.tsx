@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type ContainerProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   section?: boolean;
   customClass?: string;
 };

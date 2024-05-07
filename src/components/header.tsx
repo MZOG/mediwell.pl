@@ -18,31 +18,31 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     name: "Dla lekarzy",
-    description: "Get a better understanding of your traffic",
     href: "/uslugi/dla-lekarzy",
     icon: ChartPieIcon,
   },
   {
     name: "Dla centrów medycznych",
-    description: "Speak directly to your customers",
     href: "/uslugi/dla-centrow-medycznych",
     icon: CursorArrowRaysIcon,
   },
   {
+    name: "Dla szpitali",
+    href: "/uslugi/dla-szpitali",
+    icon: ChartPieIcon,
+  },
+  {
     name: "Dla dentystów",
-    description: "Your customers’ data will be safe and secure",
     href: "/uslugi/dla-dentystow",
     icon: FingerPrintIcon,
   },
   {
     name: "Dla fizjoterapeutów",
-    description: "Connect with third-party tools",
     href: "/uslugi/dla-fizjoterapeutow",
     icon: SquaresPlusIcon,
   },
   {
     name: "Dla psychiatrów i psychoterapeutów",
-    description: "Build strategic funnels that will convert",
     href: "/uslugi/dla-psychiatrow-i-psychoterapeutow",
     icon: ArrowPathIcon,
   },
@@ -97,7 +97,7 @@ export default function Header() {
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon
@@ -111,9 +111,7 @@ export default function Header() {
                           className="block font-medium text-gray-900"
                         >
                           {item.name}
-                          <span className="absolute inset-0" />
                         </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
                       </div>
                     </div>
                   ))}
