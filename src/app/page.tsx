@@ -1,9 +1,9 @@
-import Container from "../components/container";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <Container>
-      <p>hello from container. This is DIV</p>
-    </Container>
+    <>
+      <Hero />
+    </>
   );
 }

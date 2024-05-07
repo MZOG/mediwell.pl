@@ -1,24 +1,27 @@
+import { cn } from "@/lib/utils";
 
 type ContainerProps = {
-  children: JSX.Element,
-  section?: boolean,
-  customClass?: string,
-}
+  children: React.ReactNode;
+  section?: boolean;
+  customClass?: string;
+};
 
 const Container = ({ children, section, customClass }: ContainerProps) => {
   if (section) {
     return (
-      <section className={`px-5 mx-auto max-w-7xl`}>
-        { children }
+      <section
+        className={cn(customClass && customClass, "px-5 mx-auto max-w-6xl")}
+      >
+        {children}
       </section>
-    )
+    );
   }
 
   return (
-    <div className="px-5 mx-auto max-w-7xl">
-      { children }
+    <div className={cn(customClass && customClass, "px-5 mx-auto max-w-6xl")}>
+      {children}
     </div>
-  )
-}
+  );
+};
 
 export default Container;

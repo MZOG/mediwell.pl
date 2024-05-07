@@ -19,31 +19,31 @@ const products = [
   {
     name: "Dla lekarzy",
     description: "Get a better understanding of your traffic",
-    href: "/dla-lekarzy",
+    href: "/uslugi/dla-lekarzy",
     icon: ChartPieIcon,
   },
   {
     name: "Dla centrów medycznych",
     description: "Speak directly to your customers",
-    href: "/dla-centrow-medycznych",
+    href: "/uslugi/dla-centrow-medycznych",
     icon: CursorArrowRaysIcon,
   },
   {
     name: "Dla dentystów",
     description: "Your customers’ data will be safe and secure",
-    href: "/dla-dentystow",
+    href: "/uslugi/dla-dentystow",
     icon: FingerPrintIcon,
   },
   {
     name: "Dla fizjoterapeutów",
     description: "Connect with third-party tools",
-    href: "/dla-fizjoterapeutow",
+    href: "/uslugi/dla-fizjoterapeutow",
     icon: SquaresPlusIcon,
   },
   {
     name: "Dla psychiatrów i psychoterapeutów",
     description: "Build strategic funnels that will convert",
-    href: "/dla-psychiatrow-i-psychoterapeutow",
+    href: "/uslugi/dla-psychiatrow-i-psychoterapeutow",
     icon: ArrowPathIcon,
   },
 ];
@@ -74,14 +74,8 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link
-            href="/"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Start
-          </Link>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button className="flex items-center focus:outline-none gap-x-1 text-sm font-medium leading-6 text-gray-900">
               Usługi
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -98,7 +92,7 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg focus:outline-none">
                 <div className="p-4">
                   {products.map((item) => (
                     <div
@@ -114,7 +108,7 @@ export default function Header() {
                       <div className="flex-auto">
                         <Link
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-medium text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -124,31 +118,19 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-                {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                    >
-                      <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                      {item.name}
-                    </a>
-                  ))}
-                </div> */}
               </Popover.Panel>
             </Transition>
           </Popover>
 
           <Link
             href="/o-nas"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-medium leading-6 text-gray-900"
           >
             O nas
           </Link>
           <Link
             href="/kontakt"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-medium leading-6 text-gray-900"
           >
             Kontakt
           </Link>
@@ -157,7 +139,7 @@ export default function Header() {
           <Button asChild variant="secondary">
             <Link
               href="/zostan-klientem"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-medium leading-6 text-gray-900"
             >
               Zostań klientem
             </Link>
