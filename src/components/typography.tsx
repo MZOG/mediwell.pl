@@ -11,12 +11,51 @@ const Typography = ({ type, children, customClass }: TypographyProps) => {
     return (
       <h1
         className={cn(
-          "text-2xl md:text-3xl lg:text-5xl font-extrabold text-center",
+          "scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl",
           customClass && customClass
         )}
       >
         {children}
       </h1>
+    );
+  }
+
+  if (type === "h2") {
+    return (
+      <h2
+        className={cn(
+          "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+          customClass && customClass
+        )}
+      >
+        {children}
+      </h2>
+    );
+  }
+
+  if (type === "h3") {
+    return (
+      <h3
+        className={cn(
+          "scroll-m-20 text-2xl font-semibold tracking-tight",
+          customClass && customClass
+        )}
+      >
+        {children}
+      </h3>
+    );
+  }
+
+  if (type === "h4") {
+    return (
+      <h3
+        className={cn(
+          "scroll-m-20 text-xl font-semibold tracking-tight",
+          customClass && customClass
+        )}
+      >
+        {children}
+      </h3>
     );
   }
 };
