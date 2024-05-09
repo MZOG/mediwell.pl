@@ -14,6 +14,7 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { AArrowDown, AArrowUp, Contrast, Fingerprint } from "lucide-react";
 
 const products = [
   {
@@ -51,10 +52,22 @@ const products = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleFontSizeDown = () => {
+    console.log("font size down");
+  };
+
+  const handleFontSizeUp = () => {
+    console.log("font size up");
+  };
+
+  const handleContrast = () => {
+    console.log("contrast reversed");
+  };
+
   return (
     <header className="bg-white">
       <nav
-        className="mx-auto flex max-w-5xl items-center justify-between py-6 px-5 lg:px-8"
+        className="mx-auto flex max-w-6xl items-center justify-between py-6 lg:py-10 px-5 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -121,6 +134,12 @@ export default function Header() {
           </Popover>
 
           <Link
+            href="/portfolio"
+            className="text-sm font-medium leading-6 text-gray-900"
+          >
+            Portfolio
+          </Link>
+          <Link
             href="/o-nas"
             className="text-sm font-medium leading-6 text-gray-900"
           >
@@ -133,15 +152,35 @@ export default function Header() {
             Kontakt
           </Link>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex items-center gap-2 lg:flex-1 lg:justify-end">
           <Button asChild variant="secondary">
             <Link
               href="/zostan-klientem"
-              className="text-sm font-medium leading-6 text-gray-900"
+              className="text-sm font-medium leading-6 text-gray-900 flex items-center gap-2"
             >
+              <Fingerprint size={19} />
               Zostań klientem
             </Link>
           </Button>
+          <div id="accessibility flex gap-2">
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => handleFontSizeDown()}
+            >
+              <AArrowDown size={20} />
+            </Button>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => handleFontSizeUp()}
+            >
+              <AArrowUp size={20} />
+            </Button>
+            <Button size="sm" variant="ghost" onClick={() => handleContrast()}>
+              <Contrast size={20} />
+            </Button>
+          </div>
         </div>
       </nav>
       <Dialog
@@ -203,6 +242,12 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
+                <Link
+                  href="/portfolio"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Portfolio
+                </Link>
                 <Link
                   href="/o-nas"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"

@@ -10,7 +10,10 @@ const Container = ({ children, section, customClass }: ContainerProps) => {
   if (section) {
     return (
       <section
-        className={cn(customClass && customClass, "px-5 mx-auto max-w-6xl")}
+        className={cn(
+          customClass && customClass,
+          "px-5 py-5 md:py-10 mx-auto max-w-6xl"
+        )}
       >
         {children}
       </section>
@@ -18,7 +21,12 @@ const Container = ({ children, section, customClass }: ContainerProps) => {
   }
 
   return (
-    <div className={cn(customClass && customClass, "px-5 mx-auto max-w-6xl")}>
+    <div
+      className={cn(
+        customClass && customClass,
+        "px-5 py-5 md:py-10 mx-auto max-w-6xl"
+      )}
+    >
       {children}
     </div>
   );

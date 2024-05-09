@@ -30,8 +30,8 @@ const offerList = [
 
 export default function Hero() {
   return (
-    <section className="bg-blue-50 py-20">
-      <Container customClass="grid grid-cols-2 gap-10">
+    <section className="bg-blue-50">
+      <Container customClass="grid grid-cols-2 gap-10 lg:py-20">
         <div className="space-y-8">
           <Button asChild size="sm" variant="outline">
             <Link href="/blog">
@@ -48,7 +48,7 @@ export default function Hero() {
             {offerList.map((offer, index) => (
               <Button key={index} asChild variant="outline">
                 <Link href={offer.href} className="flex gap-1 items-center">
-                  <ShieldPlus size={19} />
+                  <ShieldPlus className="stroke-blue-600" size={20} />
                   {offer.name}
                 </Link>
               </Button>
@@ -63,7 +63,11 @@ export default function Hero() {
           </Button>
         </div>
 
-        <Image src={HeroImage} alt="MediWell" />
+        <Image
+          src={HeroImage}
+          alt="Mediwell - Strony internetowe dla placówek medycznych"
+          className="rounded-xl"
+        />
       </Container>
     </section>
   );

@@ -11,7 +11,7 @@ const Typography = ({ type, children, customClass }: TypographyProps) => {
     return (
       <h1
         className={cn(
-          "scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl",
+          "scroll-m-20 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight",
           customClass && customClass
         )}
       >
@@ -24,7 +24,7 @@ const Typography = ({ type, children, customClass }: TypographyProps) => {
     return (
       <h2
         className={cn(
-          "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
+          "scroll-m-20 pb-2 text-2xl font-semibold tracking-tight first:mt-0",
           customClass && customClass
         )}
       >
@@ -37,7 +37,7 @@ const Typography = ({ type, children, customClass }: TypographyProps) => {
     return (
       <h3
         className={cn(
-          "scroll-m-20 text-2xl font-semibold tracking-tight",
+          "scroll-m-20 text-xl font-semibold tracking-tight",
           customClass && customClass
         )}
       >
@@ -50,7 +50,7 @@ const Typography = ({ type, children, customClass }: TypographyProps) => {
     return (
       <h3
         className={cn(
-          "scroll-m-20 text-xl font-semibold tracking-tight",
+          "scroll-m-20 text-lg font-semibold tracking-tight",
           customClass && customClass
         )}
       >
