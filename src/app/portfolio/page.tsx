@@ -1,9 +1,10 @@
 import Container from "@/components/container";
+import PageHeader from "@/components/page-header";
 
 const PortfolioPage = () => {
   return (
     <Container section>
-      <h1>Portfolio</h1>
+      <PageHeader heading="Portfolio" />
     </Container>
   );
 };

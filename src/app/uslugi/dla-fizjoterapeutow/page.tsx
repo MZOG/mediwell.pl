@@ -1,9 +1,10 @@
 import Container from "@/components/container";
+import PageHeader from "@/components/page-header";
 
 const DlaFizjo = () => {
   return (
     <Container section>
-      <h1>Dla fizjoterapeutow</h1>
+      <PageHeader heading="Dla fizjoterapeutów" />
     </Container>
   );
 };

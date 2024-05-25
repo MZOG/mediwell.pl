@@ -1,12 +1,13 @@
 import Container from "@/components/container";
-import Typography from "@/components/typography";
+import PageHeader from "@/components/page-header";
 
 const BecomeClientPage = () => {
   return (
     <Container section>
-      <Typography type="h1" customClass="md:text-center">
-        Zostań klientem
-      </Typography>
+      <PageHeader
+        heading="Zostań klientem"
+        slug="Tutaj jakiś tekst ze sloganem, wiadomo"
+      />
     </Container>
   );
 };

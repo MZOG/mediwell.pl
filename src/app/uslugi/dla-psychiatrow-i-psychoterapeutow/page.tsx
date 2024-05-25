@@ -1,9 +1,10 @@
 import Container from "@/components/container";
+import PageHeader from "@/components/page-header";
 
 const DlaPsychiatrowIPsychoterapeutow = () => {
   return (
     <Container section>
-      <h1>Dla psychiatrow i psychoterapeutow</h1>
+      <PageHeader heading="Dla psychiatrów i psychoterapeutów" />
     </Container>
   );
 };

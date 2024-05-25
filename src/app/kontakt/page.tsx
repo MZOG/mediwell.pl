@@ -1,9 +1,10 @@
 import Container from "@/components/container";
+import PageHeader from "@/components/page-header";
 
 const ContactPage = () => {
   return (
     <Container section>
-      <h1>Kontakt</h1>
+      <PageHeader heading="Kontakt" slug="Masz pytanie?" />
     </Container>
   );
 };

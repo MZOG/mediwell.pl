@@ -1,9 +1,10 @@
 import Container from "@/components/container";
+import PageHeader from "@/components/page-header";
 
 const DlaLekarzy = () => {
   return (
     <Container section>
-      <h1>Dla Lekarzy</h1>
+      <PageHeader heading="Dla lekarzy" />
     </Container>
   );
 };

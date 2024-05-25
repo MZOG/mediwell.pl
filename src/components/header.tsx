@@ -14,7 +14,7 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { AArrowDown, AArrowUp, Contrast, Fingerprint } from "lucide-react";
+import { Fingerprint } from "lucide-react";
 
 const products = [
   {
@@ -52,28 +52,22 @@ const products = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleFontSizeDown = () => {
-    console.log("font size down");
-  };
-
-  const handleFontSizeUp = () => {
-    console.log("font size up");
-  };
-
-  const handleContrast = () => {
-    console.log("contrast reversed");
-  };
-
   return (
     <header className="bg-white">
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between py-6 lg:py-10 px-5 lg:px-8"
+        className="mx-auto flex max-w-5xl items-center justify-between py-6 lg:py-10 px-5 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 text-xl font-extrabold">
+          <Link
+            href="/"
+            className="-m-1.5 p-1.5 text-xl leading-none font-extrabold"
+          >
             <span className="sr-only">Your Company</span>
-            medi<span className="text-secondary">well</span>
+            Medi<span className="text-secondary">well</span>
+            <span className="text-[11px] block leading-none font-normal">
+              Medyczne strony internetowe
+            </span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -106,29 +100,32 @@ export default function Header() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg focus:outline-none">
-                <div className="p-4">
-                  {products.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                        <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="flex-auto">
-                        <Link
-                          href={item.href}
-                          className="block font-medium text-gray-900"
-                        >
-                          {item.name}
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {({ close }) => (
+                  <div className="p-4">
+                    {products.map((item) => (
+                      <Link
+                        onClick={() => {
+                          close();
+                        }}
+                        href={item.href}
+                        key={item.name}
+                        className="group cursor-pointer relative flex items-center gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                      >
+                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                          <item.icon
+                            className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <div className="flex-auto">
+                          <p className="block font-medium text-gray-900">
+                            {item.name}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </Popover.Panel>
             </Transition>
           </Popover>
@@ -162,44 +159,32 @@ export default function Header() {
               Zostań klientem
             </Link>
           </Button>
-          <div id="accessibility flex gap-2">
-            <Button
-              size="sm"
-              variant="ghost"
-              onClick={() => handleFontSizeDown()}
-            >
-              <AArrowDown size={20} />
-            </Button>
-            <Button
-              size="sm"
-              variant="ghost"
-              onClick={() => handleFontSizeUp()}
-            >
-              <AArrowUp size={20} />
-            </Button>
-            <Button size="sm" variant="ghost" onClick={() => handleContrast()}>
-              <Contrast size={20} />
-            </Button>
-          </div>
         </div>
       </nav>
       <Dialog
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+        onClose={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-5 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5 text-xl font-extrabold">
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              href="/"
+              className="-m-1.5 p-1.5 text-xl font-extrabold leading-none"
+            >
               <span className="sr-only">Your Company</span>
-              medi<span className="text-secondary">well</span>
+              Medi<span className="text-secondary">well</span>
+              <span className="text-[11px] block leading-none font-normal">
+                Medyczne strony internetowe
+              </span>
             </Link>
             <button
+              onClick={() => setMobileMenuOpen(false)}
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -209,15 +194,16 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Start
                 </Link>
                 <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
+                  {({ open, close }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50">
                         Usługi
                         <ChevronDownIcon
                           className={cn(
@@ -230,10 +216,11 @@ export default function Header() {
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {products.map((item) => (
                           <Disclosure.Button
+                            onClick={() => close()}
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -243,40 +230,46 @@ export default function Header() {
                   )}
                 </Disclosure>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/portfolio"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Portfolio
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/o-nas"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   O nas
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/kontakt"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Kontakt
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="/zostan-klientem"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Zostań klientem
                 </Link>
               </div>
               <div className="py-6">
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="mailto:kontakt@mediwell.pl"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   kontakt@mediwell.pl
                 </Link>
                 <Link
+                  onClick={() => setMobileMenuOpen(false)}
                   href="tel:739907919"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   +48 739 907 919
                 </Link>

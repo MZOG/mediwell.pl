@@ -30,7 +30,7 @@ const offerList = [
 
 export default function Hero() {
   return (
-    <section className="bg-blue-50">
+    <section className="bg-blue-50/50">
       <Container customClass="grid grid-cols-2 gap-10 lg:py-20">
         <div className="space-y-8">
           <Button asChild size="sm" variant="outline">
@@ -39,7 +39,7 @@ export default function Hero() {
             </Link>
           </Button>
 
-          <h1 className="text-[45px] leading-none font-extrabold">
+          <h1 className="text-[45px] leading-none font-bold">
             Strony internetowe dla placówek{" "}
             <span className="text-secondary">medycznych</span>
           </h1>
