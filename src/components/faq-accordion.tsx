@@ -18,7 +18,7 @@ type FaqProps = {
 
 const FAQAccordion = ({ questions }: FaqProps) => {
   const trackQuestion = ({ question }: { question: string }) => {
-    console.log(question);
+    // console.log(question);
   };
 
   return (

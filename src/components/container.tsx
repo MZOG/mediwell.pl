@@ -9,9 +9,7 @@ type ContainerProps = {
 const Container = ({ children, section, customClass }: ContainerProps) => {
   if (section) {
     return (
-      <section
-        className={cn(customClass && customClass, "px-5 mx-auto max-w-6xl")}
-      >
+      <section className={cn("px-5 mx-auto max-w-6xl", customClass)}>
         {children}
       </section>
     );

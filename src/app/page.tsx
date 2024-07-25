@@ -1,10 +1,9 @@
-import Hero from "@/components/hero";
-import WhyUs from "@/components/why-us";
-export default function Home() {
+import Hero from "@/components/homepage/hero";
+
+export default async function Home() {
   return (
     <>
       <Hero />
-      <WhyUs />
     </>
   );
 }
