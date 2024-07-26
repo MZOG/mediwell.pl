@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-const PortfolioImage = (props: Props) => {
+const PortfolioImage = () => {
   return (
     // <Image />
     <p>image</p>

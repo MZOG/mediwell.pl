@@ -4,6 +4,7 @@ import { getData } from "@/lib/utils";
 import PortfolioInfo from "@/components/portfolio-components/portfolio-info";
 import PortfolioSection from "@/components/portfolio-components/portfolio-section";
 import PortfolioImage from "@/components/portfolio-components/portfolio-image";
+import Testimonial from "@/components/portfolio-components/testimonial";
 
 type Props = {
   params: { slug: string };
@@ -30,6 +31,8 @@ const getContentComponents = ({ id, __component, ...rest }: any) => {
     ContentComponent = PortfolioSection;
   } else if (__component === "post-category.image") {
     ContentComponent = PortfolioImage;
+  } else if (__component === "post-category.testimonial") {
+    ContentComponent = Testimonial;
   }
 
   return ContentComponent ? (
@@ -43,14 +46,14 @@ const PortfolioItem = async ({ params }: Props) => {
   );
 
   const { title, content } = response.data[0].attributes;
-  console.log(content);
 
   return (
-    <Container section>
-      <p>realizacja {title}</p>
-
+    <>
+      <Container section>
+        <p>realizacja {title}</p>
+      </Container>
       {content.map(getContentComponents)}
-    </Container>
+    </>
   );
 };
 

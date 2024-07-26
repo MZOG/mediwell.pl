@@ -35,7 +35,7 @@ export default function RootLayout({
   if (process.env.NEXT_PUBLIC_IS_DEVELOPMENT) <Maintenance />;
   return (
     <html lang="pl">
-      <body className={inter.className}>
+      <body>
         <Header />
         <main>{children}</main>
       </body>

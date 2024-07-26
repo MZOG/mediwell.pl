@@ -37,4 +37,9 @@
   }
 }
 
- 
+.post-content a {
+  @apply text-blue-500 font-medium underline underline-offset-4 hover:bg-blue-50;
+}
+.post-content strong {
+  @apply font-medium;
+}
