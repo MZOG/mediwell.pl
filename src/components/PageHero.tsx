@@ -6,7 +6,7 @@ import Typography from "./Typography";
 
 const PageHero = () => {
   return (
-    <section className="px-5 mx-auto max-w-7xl md:mt-10 lg:mt-24">
+    <section className="px-5 mx-auto max-w-7xl h-screen flex items-center">
       <div className="flex flex-col md:flex-row gap-10 lg:gap-32 md:items-center">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3 lg:gap-5">
@@ -29,7 +29,7 @@ const PageHero = () => {
             size="primary"
             className="self-start "
           >
-            <Link href="/darmowa-konsultacja">Darmowa konsultacja</Link>
+            <a href="tel:739907919">Zadzwoń +48 739 907 919</a>
           </Button>
         </div>
 

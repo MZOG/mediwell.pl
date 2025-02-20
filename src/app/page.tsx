@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <PageHero />
-      <WhyUs />
-      <Features />
-      <Success />
-      <PortfolioHomepage />
-      <FreeConsultation />
+      {/* <WhyUs /> */}
+      {/* <Features /> */}
+      {/* <Success /> */}
+      {/* <PortfolioHomepage /> */}
+      {/* <FreeConsultation /> */}
     </>
   );
 }

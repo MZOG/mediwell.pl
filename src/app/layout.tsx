@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={`${jakarta.className} text-primary`}>
-        <Header />
-        <main className="mt-5 lg:mt-8">
+        {/* <Header /> */}
+        <main className="">
           <ViewTransition name="test">{children}</ViewTransition>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
