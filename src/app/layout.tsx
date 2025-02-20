@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import { unstable_ViewTransition as ViewTransition } from "react";
+
+import { Plus_Jakarta_Sans } from "next/font/google";
+const jakarta = Plus_Jakarta_Sans({ display: "swap" });
 
 export const metadata: Metadata = {
   title: "Mediwell",
@@ -13,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body>{children}</body>
+      <body className={`${jakarta.className} text-primary`}>
+        <Header />
+        <main className="mt-5 lg:mt-8">
+          <ViewTransition name="test">{children}</ViewTransition>
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
