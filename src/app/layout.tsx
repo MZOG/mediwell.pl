@@ -5,7 +5,7 @@ import Footer from "@/components/common/Footer";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
-const jakarta = Plus_Jakarta_Sans({ display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ display: "swap", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mediwell",
