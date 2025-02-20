@@ -5,13 +5,13 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 
 export default function FreeConsultation() {
-  async function action(formData: FormData) {
-    const data = {
-      full_name: formData.get("full_name"),
-      company: formData.get("company"),
-      phone: formData.get("phone"),
-    };
-  }
+  // async function action(formData: FormData) {
+  //   const data = {
+  //     full_name: formData.get("full_name"),
+  //     company: formData.get("company"),
+  //     phone: formData.get("phone"),
+  //   };
+  // }
   return (
     <section className="px-5 mx-auto max-w-7xl mt-24 lg:mt-40">
       <Typography type="h2" className="text-center">
@@ -19,6 +19,7 @@ export default function FreeConsultation() {
       </Typography>
 
       <form
+        // @ts-expect-error action is not defined
         action={action}
         className="space-y-5 mx-auto max-w-md bg-gray-50/40 rounded-2xl p-7 md:p-10 mt-10 lg:mt-14"
       >
