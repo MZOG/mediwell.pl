@@ -1,4 +1,3 @@
-import PlausibleProvider from "next-plausible";
 import type { Metadata } from "next";
 import "./globals.css";
 // import Header from "@/components/common/Header";
@@ -20,13 +19,11 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={`${jakarta.className} text-primary`}>
-        <PlausibleProvider domain="mediwell.pl">
-          {/* <Header /> */}
-          <main className="">
-            <ViewTransition name="test">{children}</ViewTransition>
-          </main>
-          {/* <Footer /> */}
-        </PlausibleProvider>
+        {/* <Header /> */}
+        <main className="">
+          <ViewTransition name="test">{children}</ViewTransition>
+        </main>
+        {/* <Footer /> */}
       </body>
     </html>
   );
