@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
+// import Header from "@/components/common/Header";
+// import Footer from "@/components/common/Footer";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
 import { Plus_Jakarta_Sans } from "next/font/google";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import HeroImage from "../../public/mediwell_hero.svg";
